@@ -21,16 +21,26 @@ BIN = $(SRC:.cpp=)
 
 
 # Rules
-default: AddressSanitizer CppCheck Meter_Assembly Meter Ranges_constexpr \
-         RangesRefactoring_Animals RangesRefactoring_Birthday RangesRefactoring_Countries \
-         RangesRefactoring_Recipes Strategy_Refactoring StrongType_Assembly StrongType \
-         StrongType1 StrongType2 StrongType3 UniquePtr_constexpr Visitor_Refactoring
+default: AddressSanitizer Count CppCheck Erase IntegralShift Meter_Assembly Meter \
+         Ranges_constexpr RangesRefactoring_Animals RangesRefactoring_Birthday \
+         RangesRefactoring_Countries RangesRefactoring_Recipes Strategy_Refactoring \
+         StrongType_Assembly StrongType StrongType1 StrongType2 StrongType3 ToInt \
+         UniquePtr_constexpr Visitor_Refactoring
 
 AddressSanitizer: AddressSanitizer.cpp
 	$(CXX) $(CXXFLAGS) -o AddressSanitizer AddressSanitizer.cpp
 
+Count: Count.cpp
+	$(CXX) $(CXXFLAGS) -o Count Count.cpp
+
 CppCheck: CppCheck.cpp
 	$(CXX) $(CXXFLAGS) -o CppCheck CppCheck.cpp
+
+Erase: Erase.cpp
+	$(CXX) $(CXXFLAGS) -o Erase Erase.cpp
+
+IntegralShift: IntegralShift.cpp
+	$(CXX) $(CXXFLAGS) -o IntegralShift IntegralShift.cpp
 
 Meter_Assembly: Meter_Assembly.cpp
 	$(CXX) $(CXXFLAGS) -o Meter_Assembly Meter_Assembly.cpp
@@ -70,6 +80,9 @@ StrongType2: StrongType2.cpp
 
 StrongType3: StrongType3.cpp
 	$(CXX) $(CXXFLAGS) -o StrongType3 StrongType3.cpp
+
+ToInt: ToInt.cpp
+	$(CXX) $(CXXFLAGS) -o ToInt ToInt.cpp
 
 UniquePtr_constexpr: UniquePtr_constexpr.cpp
 	$(CXX) $(CXXFLAGS) -o UniquePtr_constexpr UniquePtr_constexpr.cpp

@@ -17,8 +17,20 @@ add_executable(AddressSanitizer
    AddressSanitizer.cpp
    )
 
+add_executable(Count
+   Count.cpp
+   )
+
 add_executable(CppCheck
    CppCheck.cpp
+   )
+
+add_executable(Erase
+   Erase.cpp
+   )
+
+add_executable(IntegralShift
+   IntegralShift.cpp
    )
 
 add_executable(Meter_Assembly
@@ -73,6 +85,10 @@ add_executable(StrongType3
    StrongType3.cpp
    )
 
+add_executable(ToInt
+   ToInt.cpp
+   )
+
 add_executable(UniquePtr_constexpr
    UniquePtr_constexpr.cpp
    )
@@ -83,7 +99,10 @@ add_executable(Visitor_Refactoring
 
 set_target_properties(
    AddressSanitizer
+   Count
    CppCheck
+   Erase
+   IntegralShift
    Meter_Assembly
    Meter
    Ranges_constexpr
@@ -97,6 +116,7 @@ set_target_properties(
    StrongType1
    StrongType2
    StrongType3
+   ToInt
    UniquePtr_constexpr
    Visitor_Refactoring
    PROPERTIES

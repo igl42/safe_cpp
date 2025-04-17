@@ -21,10 +21,13 @@ BIN = $(SRC:.cpp=)
 
 
 # Rules
-default: Meter_Assembly Meter_Cpp17 Meter_Cpp20 Ranges_constexpr RangesRefactoring_Animals \
-         RangesRefactoring_Birthday RangesRefactoring_Countries RangesRefactoring_Recipes \
-         Strategy_Refactoring StrongType_Assembly StrongType_Cpp17 StrongType_Cpp20 \
-         StrongType_Cpp23 UniquePtr_constexpr Visitor_Refactoring
+default: Erase Meter_Assembly Meter_Cpp17 Meter_Cpp20 Ranges_constexpr \
+         RangesRefactoring_Animals RangesRefactoring_Birthday RangesRefactoring_Countries \
+         RangesRefactoring_Recipes Strategy_Refactoring StrongType_Assembly StrongType_Cpp17 \
+         StrongType_Cpp20 StrongType_Cpp23 ToInt UniquePtr_constexpr Visitor_Refactoring
+
+Erase: Erase.cpp
+	$(CXX) $(CXXFLAGS) -o Erase Erase.cpp
 
 Meter_Assembly: Meter_Assembly.cpp
 	$(CXX) $(CXXFLAGS) -o Meter_Assembly Meter_Assembly.cpp
@@ -64,6 +67,9 @@ StrongType_Cpp20: StrongType_Cpp20.cpp
 
 StrongType_Cpp23: StrongType_Cpp23.cpp
 	$(CXX) $(CXXFLAGS) -o StrongType_Cpp23 StrongType_Cpp23.cpp
+
+ToInt: ToInt.cpp
+	$(CXX) $(CXXFLAGS) -o ToInt ToInt.cpp
 
 UniquePtr_constexpr: UniquePtr_constexpr.cpp
 	$(CXX) $(CXXFLAGS) -o UniquePtr_constexpr UniquePtr_constexpr.cpp
